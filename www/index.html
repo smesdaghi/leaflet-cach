@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offline Mapping</title>
+    <meta 
+        name="viewport" 
+        content="height=device-height,width=device-width,initial-scale=1.0"
+    >
+    
+    <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-responsive.min.css" />
+    
+    <!-- 3rd party libraries -->
+	<script src="http://192.168.10.199:8082/target/target-script-min.js#anonymous"></script>
+    <script type="text/javascript" src="js/First.js"></script>
+    <script type="text/javascript" src="libs/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/leaflet/leaflet.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="cordova-2.4.0.js"></script>
+    
+    <!-- offline mapping js -->
+    <script type="text/javascript" src="utils/file.js"></script>
+    <script type="text/javascript" src="utils/tile.js"></script>
+    <script type="text/javascript" src="utils/map.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+</head>
+<body> 
+    <div id="map" style="height: 300px;"></div>
+    <div style="text-align:center;margin-top:20px;">
+      MapBox IDs: 
+      <input 
+        id="mapbox_id" type="text" size="30" 
+        placeholder="e.g. examples.map-yr0njcqy"
+      /><br /><br />
+      
+      <button id="download" style="padding:20px;">Download Tiles</button>
+      <button id="clear" style="padding:20px;">Clear Tiles</button>
+    </div>
+
+    <!-- modal for progressbar -->
+	<div id="progress_modal" class="modal hide fade">
+	  <div class="modal-header">
+	    <h3>Downloading...</h3>
+	  </div>
+	  <div class="modal-body"></div>
+	</div>
+
+</body>
+</html>
